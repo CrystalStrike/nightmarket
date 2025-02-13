@@ -169,33 +169,37 @@
             { name: "Elderflame Vandal", img: "elderflame-vandal.png" },
             { name: "Singularity Phantom", img: "singularity-phantom.png" },
             { name: "Sovereign Ghost", img: "sovereign-ghost.png" },
-            { name: "Forsaken Vandal", img: "forsaken-vandal.png" }
-			{ name: "Abyssal Vandal", img: "abyssal-vandal.png" },
-			{ name: "Prime Spectre", img: "prime-spectre.png" },
-			{ name: "Reaver Phantom", img: "reaver-phantom.png" },
-			{ name: "Imperium Operator", img: "imperium-operator.png" },
-			{ name: "R.E.S. Bulldog", img: "res-bulldog.png" },
-			{ name: "Valorant Go! Classic", img: "valorant-go-classic.png" },
-			{ name: "Prism Vandal", img: "prism-vandal.png" },
-			{ name: "Elderflame Frenzy", img: "elderflame-frenzy.png" },
-			{ name: "Oni Bulldog", img: "oni-bulldog.png" },
-			{ name: "Cavalier Ghost", img: "cavalier-ghost.png" },
-			{ name: "Sezer, çilek kokusunu sezer.", img: "sezer.png" },
-			{ name: "Kuronami Vandal", img: "kuronami-vandal.png" },
-			{ name: "Ion Vandal", img: "ion-vandal.png" },
-			{ name: "Glitchpop Bulldog", img: "glitchpop-bulldog.png" },
-			{ name: "Ruination Ghost", img: "ruination-ghost.png" },
-			{ name: "RGX Classic", img: "rgx-classic.png" },
-			{ name: "Singularity Vandal", img: "singularity-vandal.png" },
-			{ name: "Tactical Spectre", img: "tactical-spectre.png" },
-			{ name: "Infinity Phantom", img: "infinity-phantom.png" },
-			{ name: "Gravitational Uranium Neuroblaster Operator", img: "gravitational-uranium-neuroblaster-operator.png" }
-
+            { name: "Forsaken Vandal", img: "forsaken-vandal.png" },
+            { name: "Abyssal Vandal", img: "abyssal-vandal.png" },
+            { name: "Prime Spectre", img: "prime-spectre.png" },
+            { name: "Reaver Phantom", img: "reaver-phantom.png" },
+            { name: "Imperium Operator", img: "imperium-operator.png" },
+            { name: "R.E.S. Bulldog", img: "res-bulldog.png" },
+            { name: "Valorant Go! Classic", img: "valorant-go-classic.png" },
+            { name: "Prism Vandal", img: "prism-vandal.png" },
+            { name: "Elderflame Frenzy", img: "elderflame-frenzy.png" },
+            { name: "Oni Bulldog", img: "oni-bulldog.png" },
+            { name: "Cavalier Ghost", img: "cavalier-ghost.png" },
+            { name: "Sezer, çilek kokusunu sezer.", img: "sezer.png" },
+            { name: "Kuronami Vandal", img: "kuronami-vandal.png" },
+            { name: "Ion Vandal", img: "ion-vandal.png" },
+            { name: "Glitchpop Bulldog", img: "glitchpop-bulldog.png" },
+            { name: "Ruination Ghost", img: "ruination-ghost.png" },
+            { name: "RGX Classic", img: "rgx-classic.png" },
+            { name: "Singularity Vandal", img: "singularity-vandal.png" },
+            { name: "Tactical Spectre", img: "tactical-spectre.png" },
+            { name: "Infinity Phantom", img: "infinity-phantom.png" },
+            { name: "Gravitational Uranium Neuroblaster Operator", img: "gravitational-uranium-neuroblaster-operator.png" }
         ];
         const discounts = ["1820 VP", "1720 VP", "1650 VP", "1550 VP", "1450 VP", "1400 VP", "1220 VP", "650 VP"];
 
         function revealCard(card) {
             if (!card.classList.contains("revealed")) {
+                if (skins.length === 0 || discounts.length === 0) {
+                    alert("Tüm kartlar açıldı!");
+                    return;
+                }
+
                 // Seçim işlemi ve eşsiz skin ve VP fiyatları
                 let randomSkinIndex = Math.floor(Math.random() * skins.length);
                 let randomDiscountIndex = Math.floor(Math.random() * discounts.length);
